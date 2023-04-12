@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Encriptador de Texto</title>
+  <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="assets/css/estilo.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="encriptar">
+        <textarea name="texto" class="texto" id="texto" cols="30" rows="10"
+          placeholder="Ingresa el texto aquí"></textarea>
+
+        <div class="terminos">
+          <p><i class='bx bxs-info-circle icono'></i>Solo letras minúsculas y sin acentos.</p>
+        </div>
+        <div class="botones">
+          <div class="grid">
+            <button class="btn btn-encriptar" type="button" onclick="encriptar()">
+              Encriptar
+            </button>
+          </div>
+          <div class="grid">
+            <button class="btn btn-desencriptar" type="button" onclick="desencriptar()">
+              Desencriptar
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="encriptado">
+        <img src="assets/img/muneco.png" alt="" id="muneco" class="muneco" />
+        <div class="mensaje-encriptado" id="mensaje-encriptado">
+          <h2 id="titulo-mensaje">Ningún mensaje fue encontrado</h2>
+          <p id="parrafo">
+            Ingresa el texto que deseas encriptar o desencriptar
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="index.js"></script>
+
+</html>
