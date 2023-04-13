@@ -80,60 +80,83 @@ body {
     outline: none;
 }
 
-.terminos{
+.terminos {
     width: 70%;
-    padding: 1rem;
     font-family: 'Inter';
     color: var(--text-title);
     font-size: 12px;
 }
 
-.icono{
+.icono {
     font-size: 18px;
 }
 
-.botones{
+.botones {
+    width: 60%;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }
 
-.grid{
-    width: 100%;
-    margin-left: 1rem;
-}
-
-.btn{
-    width: 20vw;
+.btn {
+    width: 90%;
     padding: 0.9rem;
     border-radius: 16px;
     font-family: 'Inter';
+    margin-top: 1rem;
 }
 
-.btn-encriptar{
+.btn:hover{
+    width: 88%;
+    padding: 0.8rem;
+}
+
+.btn-encriptar {
     background: var(--primary-color);
     color: #ffffff;
     border: 1.8px solid var(--primary-color);
 }
 
-.btn-encriptar:hover{
+.btn-encriptar:hover {
     background: var(--line-color);
     color: #ffffff;
     border: 1.8px solid var(--line-color);
 }
 
-.btn-desencriptar{
+.btn-desencriptar {
     background: var(--secondary-color);
     color: var(--primary-color);
     border: 1.8px solid var(--primary-color);
 }
 
-.btn-desencriptar:hover{
-    background:#e4e8ec;
+.btn-desencriptar:hover {
+    background: #e4e8ec;
     color: var(--primary-color);
     border: 1.8px solid var(--title-color);
 }
 
-.muneco{
+.btn-copiar {
+    width: 100%;
+    display: none;
+    margin-top: 1rem;
+    border-radius: 16px;
+    padding: 0.9rem 5rem 0.9rem 5rem;
+    background: #ffffff;
+    color: var(--primary-color);
+    border: 1.8px solid var(--primary-color);
+}
+
+.btn-copiar:hover {
+    width: 98%;
+    background: #e4e8ec;
+    color: var(--primary-color);
+    border: 1.8px solid var(--title-color);
+    padding: 0.8rem 4.9rem 0.8rem 4.9rem;
+}
+
+.muneco {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -141,11 +164,11 @@ body {
     align-items: center;
 }
 
-.mensaje-encriptado{
+.mensaje-encriptado {
     text-align: center;
 }
 
-.mensaje-encriptado p{
+.mensaje-encriptado p {
     text-align: center;
     margin-top: 2rem;
     font-family: 'Inter';
@@ -153,52 +176,127 @@ body {
     color: var(--text-title);
 }
 
-/* ====== diseño responsive ====== */
-@media screen and (max-width: 720px) {
-    body{
+
+/* ====== diseño responsive tablet ====== */
+@media screen and (max-width: 980px) {
+    body {
         overflow-x: hidden;
     }
-    .row{
-        display: block;
-        width: 95%;
-    }
-    .encriptar{
-        margin-left: 0;
-    }
-    .texto{
-        width: 100%;
-        font-size: 20px;
-    }
-    .terminos{
-        width: 100%;
-    }
 
-    .grid{
+    .row {
+        display: block;
         width: 100%;
-        margin-left: 0.5rem;
+        padding: 1rem;
         margin-bottom: 1rem;
     }
 
-    .botones{
-        display: block;
+    .encriptar {
+        margin-left: auto;
+        width: 100%;
+        padding: 0.9rem 0rem 3rem 0rem;
     }
-    
-    .btn{
-        width: 70vw;
+    .encriptado{
+        width: 100%;
     }
 
-    .encriptado{
-        margin-left: 0.5rem;
+    .texto {
+        width: 100%;
+        font-size: 20px;
     }
-    .mensaje-encriptado{
+
+    .terminos {
+        width: 100%;
+    }
+
+    .botones {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 2rem;
+        grid-row-gap: 0px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 0.7rem;
+    }
+
+    .btn:hover{
+        width: 98%;
+        padding: 0.6rem;
+    }
+
+
+    .mensaje-encriptado {
         margin-top: 2rem;
     }
 
-    .muneco{
+    .muneco {
         display: none;
     }
 
-    .mensaje-encriptado p{
+    .mensaje-encriptado p {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* ====== diseño responsive celular ====== */
+@media screen and (max-width: 480px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .row {
+        display: block;
+        width: 95%;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .encriptar {
+        margin-left: auto;
+        width: 100%;
+        padding: 0.9rem 0rem 3rem 0rem;
+    }
+
+    .encriptado{
+        width: 100%;
+    }
+
+    .texto {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .terminos {
+        width: 100%;
+    }
+
+    .botones {
+        width: 100%;
+        display: block;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 0.9rem;
+    }
+
+    .btn:hover{
+        width: 98%;
+        padding: 0.6rem;
+    }
+
+    .mensaje-encriptado {
+        margin-top: 2rem;
+    }
+
+    .muneco {
+        display: none;
+    }
+
+    .mensaje-encriptado p {
         margin-bottom: 1.5rem;
     }
 }
