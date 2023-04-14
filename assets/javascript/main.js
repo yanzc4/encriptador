@@ -14,12 +14,14 @@ function encriptar() {
         .replace(/u/img, "ufat");
 
     if (texto.length != 0) {
-        document.getElementById("texto").value = textoCifrado;
+        document.getElementById("encriptado").className = "encriptado2";
+        document.getElementById("parrafo").className = "parrafo2";
         tituloMensaje.style.display = 'none';
         parrafo.textContent = textoCifrado;
         muneco.style.display = 'none';
         copiar.style.display = 'flex';
         Swal.fire("Listo", "¡Texto encriptado con exito!", "success");
+        document.getElementById("texto").value = "";
     } else {
         muneco.src = "assets/img/muneco.png";
         tituloMensaje.textContent = "Ningún mensaje fue encontrado";
@@ -43,12 +45,14 @@ function desencriptar() {
         .replace(/ufat/img, "u");
 
     if (texto.length != 0) {
-        document.getElementById("texto").value = textoDescifrado;
+        document.getElementById("encriptado").className = "encriptado2";
+        document.getElementById("parrafo").className = "parrafo2";
         tituloMensaje.style.display = 'none';
         parrafo.textContent = textoDescifrado;
         muneco.style.display = 'none';
         copiar.style.display = 'flex';
         Swal.fire("Listo", "¡Texto desencriptado con exito!", "success");
+        document.getElementById("texto").value = "";
     } else {
         muneco.src = "assets/img/muneco.png";
         tituloMensaje.textContent = "Ningún mensaje fue encontrado";
@@ -60,9 +64,12 @@ function desencriptar() {
 
 //funcion para copiar texto
 function copiar() {
-    let texto = document.getElementById("texto");
-    texto.select();
+    var aux = document.createElement("input");
+    aux.setAttribute("value", document.getElementById("parrafo").innerHTML);
+    document.body.appendChild(aux);
+    aux.select();
     document.execCommand("copy");
+    document.body.removeChild(aux);
     Swal.fire("Listo", "¡Texto copiado con exito!", "success");
 }
 
@@ -71,3 +78,5 @@ function copiar() {
 document.getElementById("btn-encriptar").addEventListener("click", encriptar);
 document.getElementById("btn-desencriptar").addEventListener("click", desencriptar);
 document.getElementById("btn-copiar").addEventListener("click", copiar);
+
+
