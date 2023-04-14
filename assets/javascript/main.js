@@ -1,3 +1,4 @@
+//funciones
 function encriptar() {
     let texto = document.getElementById("texto").value;
     let tituloMensaje = document.getElementById("titulo-mensaje");
@@ -56,9 +57,17 @@ function desencriptar() {
     }
 }
 
+
+//funcion para copiar texto
 function copiar() {
     let texto = document.getElementById("texto");
     texto.select();
     document.execCommand("copy");
     Swal.fire("Listo", "¡Texto copiado con exito!", "success");
 }
+
+
+//asignar funciones a los botones
+document.getElementById("btn-encriptar").addEventListener("click", encriptar);
+document.getElementById("btn-desencriptar").addEventListener("click", desencriptar);
+document.getElementById("btn-copiar").addEventListener("click", copiar);
