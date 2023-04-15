@@ -1,0 +1,65 @@
+.mis-redes {
+    display: block;
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    opacity: 0.5;
+    z-index: 1000;
+}
+
+.mis-redes a {
+    color: inherit;
+    display: inline-block;
+}
+
+.mis-redes a:hover {
+    color: #309B76;
+    transform: scale(1.4)
+}
+
+.pie {
+    display: none;
+}
+
+footer {
+    width: 90%;
+    border-radius: 1rem;
+    padding: 1rem;
+    background: var(--secondary-color);
+    color: var(--title-color);
+    border: 1.8px solid var(--primary-color);
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+footer p {
+    text-align: center;
+    padding-bottom: 1rem;
+    color: var(--text-title);
+    font-family: 'Inter';
+}
+
+.grupo-link {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .mis-redes {
+        display: none;
+    }
+
+    .pie {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
